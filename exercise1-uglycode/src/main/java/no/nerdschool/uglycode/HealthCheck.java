@@ -2,13 +2,14 @@ package no.nerdschool.uglycode;
 
 public class HealthCheck {
     public static int skipper = 1;
-    public static String inputString;
-    public static int compute(Object input) {
+    public static String c;
+    public static int cmp(Object input) {
         {
             if (input instanceof String) {
-                inputString = (String) input;
+                c = (String) input;
             } else return 0;
         }
+        String inputString = (String) input;
         //need a test to see if the array does indeed have 3 indecies?
         //transform the input string into a list of strings, split on spaces
         String[] listOfStrings = inputString.split(" ");
