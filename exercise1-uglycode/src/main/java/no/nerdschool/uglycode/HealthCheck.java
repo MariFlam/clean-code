@@ -1,11 +1,9 @@
 package no.nerdschool.uglycode;
 
-//MISSION CRITICAL
-//opVal and valPres. from fid to consider a cut-out. Three rot to complete halt.
-//NB! halt is expensive, so be CAREFUL!
 public class HealthCheck {
-    //USED in sys.core.fid. Quentin has the requirements - jun 2005
-    public static int cmp(Object i) {
+    public static int skipper = 1;
+    public static String c;
+    public static int compute(Object i) {
         {
             if (i instanceof String) {
                 c = (String) i;
@@ -15,8 +13,6 @@ public class HealthCheck {
         int jeff = Integer.parseInt(c.substring(skipper + c.indexOf(' '),
                 c.indexOf(' ', c.indexOf(' ') + 1)));
         if (c.substring(c.indexOf(' ', 1 + c.indexOf(' ')) + skipper, c.length()).equals("+")) return x + jeff;
-
-        //BUG: FID-823
 
         if (c.substring(c.indexOf(' ', 1 + c.indexOf(' ')) + skipper, c.length()).equals("-")) {
             return -jeff - (-x); //x-jeff isteden?
@@ -28,9 +24,6 @@ public class HealthCheck {
         }
     }
 
-    public static int skipper = 1;
-    public static String c;
-    {//Also found in C3i 2004-2
-        //TODO: Correct FID-12
+
     }
 }
