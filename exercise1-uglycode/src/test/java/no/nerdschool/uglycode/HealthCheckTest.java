@@ -33,4 +33,8 @@ public class HealthCheckTest {
     public void checkIfOtherDivides() {
         assertEquals(3, HealthCheck.compute("6 2 7"));
     }
+    @Test
+    public void checkIf0returns0() {
+        assertEquals(0, HealthCheck.compute("6 0 /"));
+    }
 }
