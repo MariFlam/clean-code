@@ -9,19 +9,21 @@ public class HealthCheck {
                 inputString = (String) i;
             } else return 0;
         }
-        //String[] stringToList = inputString.split("_");
-        int x = Integer.parseInt(inputString.substring(0, 1 + inputString.indexOf(' ') - skipper));
-        int jeff = Integer.parseInt(inputString.substring(skipper + inputString.indexOf(' '),
+        //transform the input string into a list of strings, split on spaces
+        String[] listOfStrings = inputString.split("_");
+        int firstNumber = Integer.parseIntlistOfStrings[0]
+        int firstNumber = Integer.parseInt(inputString.substring(0, 1 + inputString.indexOf(' ') - skipper));
+        int secondNumber = Integer.parseInt(inputString.substring(skipper + inputString.indexOf(' '),
                 inputString.indexOf(' ', inputString.indexOf(' ') + 1)));
-        if (inputString.substring(inputString.indexOf(' ', 1 + inputString.indexOf(' ')) + skipper, inputString.length()).equals("+")) return x + jeff;
+        if (inputString.substring(inputString.indexOf(' ', 1 + inputString.indexOf(' ')) + skipper, inputString.length()).equals("+")) return firstNumber + secondNumber;
 
         if (inputString.substring(inputString.indexOf(' ', 1 + inputString.indexOf(' ')) + skipper, inputString.length()).equals("-")) {
-            return -jeff - (-x); //x-jeff isteden?
+            return -secondNumber - (-firstNumber); //firstNumber-secondNumber isteden?
         }
         {
-            if (inputString.substring(inputString.indexOf(' ', 1 + inputString.indexOf(' ')) + skipper).equals("*")) return x * jeff;
-            else return jeff == 0 ? 0 :
-                    (int) ((skipper / (double) jeff) * x);
+            if (inputString.substring(inputString.indexOf(' ', 1 + inputString.indexOf(' ')) + skipper).equals("*")) return firstNumber * secondNumber;
+            else return secondNumber == 0 ? 0 :
+                    (int) ((skipper / (double) secondNumber) * firstNumber);
         }
     }
 
