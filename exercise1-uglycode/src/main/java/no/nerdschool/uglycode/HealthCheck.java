@@ -15,6 +15,8 @@ public class HealthCheck {
         String[] listOfStrings = inputString.split(" ");
 
         //the first number in the list is assigned to the variable firstNumber
+
+        //add try-catch wih index out of bounds to return -1
         int firstNumber = Integer.parseInt(listOfStrings[0]);
         int secondNumber = Integer.parseInt(listOfStrings[1]);
         String operator = listOfStrings[2];
